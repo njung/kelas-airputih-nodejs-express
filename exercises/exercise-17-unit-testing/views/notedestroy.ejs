@@ -1,0 +1,8 @@
+<% include top %>
+<form method='POST' action='/notedodestroy'>
+<input type='hidden' name='id'value='<%= note._id %>'>
+<p>Delete <%= note.title %> ?</p>
+<br/><input type='submit' value='DELETE' />
+    <a href="/noteview/<%= note._id %>">Cancel</a>
+</form>
+<% include bottom %>

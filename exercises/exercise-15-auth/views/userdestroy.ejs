@@ -1,0 +1,8 @@
+<% include top %>
+<form method='POST' action='/userdodestroy'>
+<input type='hidden' name='id'value='<%= user._id %>'>
+<p>Delete <%= user.title %> ?</p>
+<br/><input type='submit' value='DELETE' />
+    <a href="/userview/<%= user._id %>">Cancel</a>
+</form>
+<% include bottom %>

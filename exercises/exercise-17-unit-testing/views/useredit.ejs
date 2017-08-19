@@ -1,0 +1,14 @@
+<% include top %>
+<form method='POST' action='/usersave'>
+<input type='hidden' name='docreate'
+    value='<%=docreate ? "create" : "update"%>'>
+<input type='hidden' name='id'
+    value='<%=user && user._id ? user._id : false%>'>
+<p>
+Username: <input type='text' name='username' value='<%= user ? user.username : "" %>' />
+<br/>
+Password: <input type='password' name='password' value='<%= user ? user.password : "" %>' />
+</p>
+<br/><input type='submit' value='Submit' />
+</form>
+<% include bottom %>

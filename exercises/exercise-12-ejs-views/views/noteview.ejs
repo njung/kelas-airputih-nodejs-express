@@ -1,0 +1,9 @@
+<% include top %>
+<p>ObjectID: <%= note._id %></p>
+<pre><%= note ? note.body : "" %></pre>
+<% if (note._id) { %>
+    <hr/>
+    <p><a href="/notedestroy/<%= note._id %>">Delete</a>
+     | <a href="/noteedit/<%= note._id %>">Edit</a></p>
+<% } %>
+<% include bottom %>
