@@ -1,0 +1,10 @@
+<% include top %>
+<%
+if (users) {
+  users.forEach(function(user) {
+    %><p><%=  user._id %>:
+    <a href="/userview/<%= user._id %>"><%= user.username %></a>
+    </p><%
+  });
+} %>
+<% include bottom %>

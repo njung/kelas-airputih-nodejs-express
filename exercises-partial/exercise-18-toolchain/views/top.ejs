@@ -1,0 +1,13 @@
+ <html>
+ <head>
+     <title><%= title %></title> <span>This is header</span>
+     <link rel='stylesheet' href='/style.css' />
+     <script src='/main.css'></script>
+ </head>
+ <body>
+     <h1><%= title %></h1>
+     <div class='navbar'>
+     <p><a href='/'>Home</a> | <a href='/users'>Users</a> | <a href='/noteadd'>ADD Note</a> | <a href='/useradd'>ADD User</a> | <a href='/<%= (session && session.authenticated) ? "logout" : "login" %>'><%= (session && session.authenticated) ? "logout" : "login" %></a> </p>  	
+
+     <hr> 
+     </div>

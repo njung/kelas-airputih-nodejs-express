@@ -1,0 +1,9 @@
+<% include top %>
+<p>ObjectID: <%= user._id %></p>
+<pre><%= user ? user.body : "" %></pre>
+<% if (user._id) { %>
+    <hr/>
+    <p><a href="/userdestroy/<%= user._id %>">Delete</a>
+     | <a href="/useredit/<%= user._id %>">Edit</a></p>
+<% } %>
+<% include bottom %>
