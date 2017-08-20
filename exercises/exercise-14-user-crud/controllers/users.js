@@ -9,6 +9,8 @@ exports.add = function(req, res, next) {
     });
 }
 
+// Kode duplikat dari notes, lalu direfaktor
+
 exports.save = function(req, res, next) {
     console.log(req.body);
     var obj = {

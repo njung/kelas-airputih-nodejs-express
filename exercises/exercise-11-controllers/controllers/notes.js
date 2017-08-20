@@ -1,5 +1,7 @@
 var notesModel = require('../models/notes');
 
+// Kontroler yang ada di sini berkasi menggunakan 
+// fungsi-fungsi dari model yang sudah dibuat
 exports.add = function(req, res, next) {
     res.send('add/edit');
 }

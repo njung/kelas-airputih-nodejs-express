@@ -18,13 +18,13 @@ exports.save = function(req, res, next) {
     if (req.body.docreate === "create") {
       console.log(obj);
       notesModel.create(obj, function(err){
-        if (err) return res.send(err);
+        if (err) return res.send(err); // Tangani galat
         res.redirect('/');
       });
     } else {
       notesModel.update(req.body.id, obj, function(err){
         // handle err
-        if (err) return res.send(err);
+        if (err) return res.send(err);  // Tangani galat
         res.redirect('/noteview/' + req.body.id);
       })
     }

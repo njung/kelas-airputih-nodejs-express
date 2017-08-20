@@ -1,10 +1,10 @@
-var mongoose = require('mongoose'); // panggil modul mongoose
-var userSchema = mongoose.Schema({  // Buat skema koleksi
+var mongoose = require('mongoose');
+var userSchema = mongoose.Schema({ 
   username : String,
   password : String,
 });
-mongoose.model('user', userSchema); // Inisiasi skema koleksi
-var usersModel = mongoose.model('user'); // Bungkus modelnya agar siap pakai
+mongoose.model('user', userSchema); 
+var usersModel = mongoose.model('user'); 
 
 exports.create = function(obj, cb) {
   return usersModel.create({

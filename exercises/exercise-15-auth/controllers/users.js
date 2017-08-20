@@ -88,22 +88,24 @@ exports.dodestroy = function(req, res, next) {
   });
 }
 
-exports.login = function(req, res, next) {
+
+// Auth
+exports.login = function(req, res, next) { // Ke halaman login
   res.render('login', {
     title: "Login",
     session : req.session,
   });
 }
 exports.dologin = function(req, res, next) {
-  usersModel.list({ username : req.body.username, password : req.body.password}, function(err, user){
+  usersModel.list({ username : req.body.username, password : req.body.password}, function(err, user){ // Cek user dan password ke db
     if (err) return res.send(err);
-    if (!user || (user && user.length < 1)) return res.render('login', { title : 'Login', session: req.session });
-    req.session.authenticated = true;
+    if (!user || (user && user.length < 1)) return res.render('login', { title : 'Login', session: req.session }); // Jika tidak cocok
+    req.session.authenticated = true; // Jika cocok, setel boolean di session
     res.redirect('/');
   });
 }
 
-exports.logout = function(req, res, next) {
+exports.logout = function(req, res, next) {  // Logout
   req.session.authenticated = false;
   res.redirect('/');
 }

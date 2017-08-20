@@ -24,7 +24,6 @@ exports.save = function(req, res, next) {
       });
     } else {
       notesModel.update(req.body.id, obj, function(err){
-        // handle err
         if (err) return res.send(err);
         res.redirect('/noteview/' + req.body.id);
       })
@@ -34,7 +33,8 @@ exports.save = function(req, res, next) {
 exports.list = function(req, res, next) {
   notesModel.list(function(err, notes) {
     if (err) return res.send(err);
-    if (req.headers['content-type'] == 'application/json') {
+    // Jika ContentType adalah JSON, kembalikan JSON
+    if (req.headers['content-type'] == 'application/json') { 
       return res.send(notes);
     }
     res.render('index', {

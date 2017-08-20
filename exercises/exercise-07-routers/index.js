@@ -1,5 +1,5 @@
-var express = require('express'); // panggil modul express
-var app = express(); // Inisiasi express
+var express = require('express');
+var app = express(); 
 
 // Routers
 app.get('/', function(req, res) { // Tangani route '/'
@@ -14,6 +14,6 @@ app.get('/other-pages', function(req, res) { // Tangani route '/other-pages'
   res.send('Just another page');
 });
 
-app.listen(3000, function() { // Jalanin
-  console.log('Webnya udah jalandong. Cek TKP.'); // Sudah benar-benar jalan
+app.listen(3000, function() {
+  console.log('Webnya udah jalandong. Cek TKP.');
 });

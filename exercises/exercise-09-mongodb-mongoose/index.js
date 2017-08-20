@@ -1,6 +1,6 @@
 require('./db'); // Inisiasi db
-var express = require('express'); // panggil modul express
-var app = express(); // Inisiasi express
+var express = require('express');
+var app = express(); 
 
 var mongoose = require('mongoose');
 var timestampSchema = mongoose.Schema({  // Buat skema koleksi
@@ -10,7 +10,7 @@ var timestampSchema = mongoose.Schema({  // Buat skema koleksi
 var timestampModel = mongoose.model('Timestamp', timestampSchema); // Inisiasi skema koleksi
 
 // Router
-app.get('/', function(req, res) { // Tangani route '/'
+app.get('/', function(req, res) { 
   // Saat route ini diakses, sebuah objek akan disimpan ke DB, lalu ditarik kembali semuanya dan diekpos ke response.
   var now = (new Date()).toString();
   var ts = {
@@ -25,6 +25,6 @@ app.get('/', function(req, res) { // Tangani route '/'
   });
 });
 
-app.listen(3000, function() { // Jalanin
-  console.log('Webnya udah jalandong. Cek TKP.'); // Sudah benar-benar jalan
+app.listen(3000, function() {
+  console.log('Webnya udah jalandong. Cek TKP.'); 
 });

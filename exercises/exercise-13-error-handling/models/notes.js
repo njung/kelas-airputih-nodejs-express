@@ -1,17 +1,17 @@
-var mongoose = require('mongoose'); // panggil modul mongoose
-var noteSchema = mongoose.Schema({  // Buat skema koleksi
+var mongoose = require('mongoose'); 
+var noteSchema = mongoose.Schema({
   title : String,
   body : String,
 });
-mongoose.model('note', noteSchema); // Inisiasi skema koleksi
-var notesModel = mongoose.model('note'); // Bungkus modelnya agar siap pakai
+mongoose.model('note', noteSchema); 
+var notesModel = mongoose.model('note'); 
 
 exports.create = function(obj, cb) {
   return notesModel.create({
     title : obj.title,
     body : obj.body,
   }, function(err, result){
-    if (err) return cb(err);
+    if (err) return cb(err);  // Tangani galat
     return cb();
   })
 }
@@ -23,7 +23,7 @@ exports.update = function(id, obj, cb) {
       body : obj.body,
     }, function(err){
      notesModel.findById(id, function(err, note) {
-      if (err) return cb(err);
+      if (err) return cb(err); // Tangani galat
       return cb(null, note);
      })
     })

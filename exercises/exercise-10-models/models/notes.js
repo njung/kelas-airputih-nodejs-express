@@ -7,7 +7,7 @@ mongoose.model('Note', noteSchema); // Inisiasi skema koleksi
 var notesModel = mongoose.model('Note'); // Bungkus modelnya agar siap pakai
 
 exports.create = function(obj, cb) {
-  return notesModel.create({
+  return notesModel.create({  // Menyimpan objek baru
     title : obj.title,
     body : obj.body,
   }, function(err, result){
@@ -16,8 +16,8 @@ exports.create = function(obj, cb) {
 }
 
 exports.update = function(id, obj, cb) {
-  return notesModel.findById(id, function(err, note) {
-    note.update({ 
+  return notesModel.findById(id, function(err, note) {  // Ambil dokumen dengan id tertentu
+    note.update({     // Lalu update
       title : obj.title,
       body : obj.body,
     }, function(err){
@@ -29,19 +29,19 @@ exports.update = function(id, obj, cb) {
 }
 
 exports.read = function(id, cb) {
-  return notesModel.findById(id, function(err, result){
+  return notesModel.findById(id, function(err, result){ // Ambil dokumen dengan id tertentu
     return cb(null, result);
   });
 }
 
 exports.list = function(cb) {
-  notesModel.find({}, function(err, result){
+  notesModel.find({}, function(err, result){ // Ambil semua dokumen
     return cb(null, result);
   });
 }
 
 exports.destroy = function(id, cb) {
-  return notesModel.remove({_id: id}, function(err) { 
+  return notesModel.remove({_id: id}, function(err) {  // Hapus dokumen dengan id tertentu
     return cb(null);
   })
 }
