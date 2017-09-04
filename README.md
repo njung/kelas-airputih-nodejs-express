@@ -2,3 +2,4 @@
 
 Aplikasi contoh diadopsi dari https://github.com/froyoframework/kelas-node-js.
 
+Belajar NodeJS bisa mengikuti https://github.com/workshopper/learnyounode
